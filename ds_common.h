@@ -27,6 +27,6 @@
 
 #define DS_OBJECT_OF(_ds, _item) ((void *)(((char *)(_item)) - (_ds)->_offset_in_object))
 
-#define DS_ITEM_OF(_ds, _object) ((typeof((_ds)->root))(((char *)(_object)) + (_ds)->_offset_in_object))
+#define DS_ITEM_OF(_ds, _object) ((__typeof__((_ds)->root))(((char *)(_object)) + (_ds)->_offset_in_object))
 
 #define DS_EXT_OBJECT_OF(_item) ((_item)->object)
